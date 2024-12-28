@@ -1,0 +1,70 @@
+/* Media Queries */
+@media screen and (max-width: 1150px) {
+  /* remove nav links from navbar */
+  .nav-links {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+}
+
+@media screen and (max-width: 850px) {
+  /* remove the search bar from navbar */
+  .search-form-inactive {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* decrease navbar block padding */
+  .navbar {
+    padding: 20px 25px;
+  }
+
+  /* handle categories */
+  .categories {
+    padding-inline: 25px;
+  }
+  .categories h2 {
+    text-align: center;
+  }
+
+  /* handle categories */
+  .products {
+    padding-inline: 25px;
+  }
+  .products h2 {
+    text-align: center;
+  }
+
+  /* handle footer content */
+  .footer {
+    padding-inline: 25px;
+  }
+  .footer-wrapper {
+    justify-content: center;
+    gap: 60px;
+  }
+  .footer-links-wrapper {
+    justify-content: center;
+  }
+
+  /* Handle add form */
+  .add-form {
+    padding-inline: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* handle hero content */
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+  .hero-search-form {
+    width: 400px;
+  }
+}

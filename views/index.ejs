@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mediaQuery.css" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title><%= title %></title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html"
+        ><img src="images/logo.png" alt="Shop Savvy Logo"
+      /></a>
+
+      <ul class="nav-links">
+        <li class="nav-link"><a href="#categories">Categories</a></li>
+        <li class="nav-link"><a href="#deals">Deals</a></li>
+        <li class="nav-link"><a href="#brands">Brands</a></li>
+      </ul>
+
+      <form class="search-form search-form-inactive" action="">
+        <input type="search" name="" id="" placeholder="Search products" />
+        <button class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="user-shortcut">
+        <a href="#" class="shortcut"
+          ><i class="fa-regular fa-user"></i>
+          <span> <%= products ? products[0].name : "Account" %> </span></a
+        >
+        <a href="#" class="shortcut"
+          ><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Wishlist</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <img src="images/heroBg.png" alt="" />
+      <div class="hero-content">
+        <h1>Shop confidently with Shop Savvy</h1>
+
+        <form class="search-form hero-search-form" action="">
+          <input type="search" name="" id="" placeholder="Search products" />
+          <button class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+        <p id="brands">
+          Easily compare prices from multiple retailers and never overpay again
+          with Shop Savvy.
+        </p>
+      </div>
+    </div>
+
+    <div class="brands-row" id="categories">
+      <img class="brand" src="images/brands/coke.png" alt="" />
+      <div class="brand apple">
+        <img src="images/brands/apple.png" alt="" />
+      </div>
+      <img class="brand" src="images/brands/playstation.png" alt="" />
+      <img class="brand" src="images/brands/samsung.png" alt="" />
+      <img class="brand" src="images/brands/nike.png" alt="" />
+      <img class="brand" src="images/brands/kfc.png" alt="" />
+      <img class="brand" src="images/brands/pampers.png" alt="" />
+      <img class="brand" src="images/brands/xbox.png" alt="" />
+    </div>
+
+    <div class="categories">
+      <h2>Checkout Our Top Categories</h2>
+
+      <div class="category-wrapper">
+        <div class="category-card">
+          <img src="images/categories/furniture.png" alt="" />
+          <h3>Furniture</h3>
+        </div>
+        <div class="category-card">
+          <img src="images/categories/tech.png" alt="" />
+          <h3>Tech</h3>
+        </div>
+        <div class="category-card">
+          <img src="images/categories/books.png" alt="" />
+          <h3>Books</h3>
+        </div>
+        <div class="category-card">
+          <img src="images/categories/handbags.png" alt="" />
+          <h3>Handbags</h3>
+        </div>
+        <div class="category-card">
+          <img src="images/categories/sneakers.png" alt="" />
+          <h3>Sneakers</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="products" id="deals">
+      <h2>Todays Best Deals For You!</h2>
+
+      <div class="products-wrapper">
+        <% products.forEach(product => { %>
+        <div class="products-card">
+          <div class="products-image">
+            <img src=" <%=
+            product.image.replace("C:\\Users\\jeffr\\Desktop\\Internship\\task1node\\public\\",
+            '') %> " alt="product" />
+            <div class="products-favorite">
+              <i class="fa-regular fa-heart checked"></i>
+            </div>
+          </div>
+
+          <div class="products-info">
+            <div>
+              <div class="products-name-price">
+                <h4><%= product.product_name %></h4>
+                <h4>₵<%= product.product_price %></h4>
+              </div>
+
+              <p class="products-description">
+                <%= product.product_description %>
+              </p>
+            </div>
+
+            <div class="products-btn-rating">
+              <button class="products-btn">Deal</button>
+              <div class="products-rating">
+                <div>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <span>(1,225)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <% }) %>
+
+        <!-- <div class="products-card">
+          <div class="products-image">
+            <img src="images/products/rice.png" alt="product" />
+            <div class="products-favorite">
+              <i class="fa-regular fa-heart checked"></i>
+            </div>
+          </div>
+
+          <div class="products-info">
+            <div>
+              <div class="products-name-price">
+                <h4>Golden Delight Basmati Rice</h4>
+                <h4>₵112.00</h4>
+              </div>
+
+              <p class="products-description">
+                Golden Delight Basmati Rice is a fresh, high-quality, and
+                well-cared for rice variety.
+              </p>
+            </div>
+
+            <div class="products-btn-rating">
+              <button class="products-btn">Deal</button>
+              <div class="products-rating">
+                <div>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <span>(1,225)</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="products-card">
+          <div class="products-image">
+            <img src="images/products/controller.png" alt="product" />
+            <div class="products-favorite">
+              <i class="fa-regular fa-heart checked"></i>
+            </div>
+          </div>
+
+          <div class="products-info">
+            <div>
+              <div class="products-name-price">
+                <h4>PS4 Controller</h4>
+                <h4>₵200.00</h4>
+              </div>
+
+              <p class="products-description">
+                The DualShock 4 wireless controller for PS4 defines the new
+                generation of play, combining revolutionary features with an
+                intuitive design and precise controls.
+              </p>
+            </div>
+
+            <div class="products-btn-rating">
+              <button class="products-btn">Deal</button>
+              <div class="products-rating">
+                <div>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <span>(1,225)</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="products-card">
+          <div class="products-image">
+            <img src="images/products/iphone.png" alt="product" />
+            <div class="products-favorite">
+              <i class="fa-regular fa-heart checked"></i>
+            </div>
+          </div>
+
+          <div class="products-info">
+            <div>
+              <div class="products-name-price">
+                <h4>iPhone 13 Pro Max</h4>
+                <h4>₵9,600.00</h4>
+              </div>
+
+              <p class="products-description">
+                128GB, Sierra Blue - Unlocked (Renewed Premium)
+              </p>
+            </div>
+
+            <div class="products-btn-rating">
+              <button class="products-btn">Deal</button>
+              <div class="products-rating">
+                <div>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <span>(1,225)</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="products-card">
+          <div class="products-image">
+            <img src="images/products/samsung.png" alt="product" />
+            <div class="products-favorite">
+              <i class="fa-regular fa-heart checked"></i>
+            </div>
+          </div>
+
+          <div class="products-info">
+            <div>
+              <div class="products-name-price">
+                <h4>Samsung Galaxy S22</h4>
+                <h4>₵9,200.00</h4>
+              </div>
+
+              <p class="products-description">
+                Samsung Galaxy S22 5G S901U 128GB U.S. Cellular or GSM UNLOCKED
+                FAIR 5-7/10
+              </p>
+            </div>
+
+            <div class="products-btn-rating">
+              <button class="products-btn">Deal</button>
+              <div class="products-rating">
+                <div>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star checked"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <span>(1,225)</span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="add-form">
+      <div class="add-form-info">
+        <h1>Addition Form</h1>
+        <p>
+          Fill out this form to add your name and a new product to our database.
+        </p>
+      </div>
+
+      <form
+        onsubmit="validator(event)"
+        class="form-wrapper"
+        action="/products"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-name">
+          <label class="form-label" for="name">Name</label>
+          <input  type="text" name="name" id="name" />
+        </div>
+        <div class="form-image">
+          <label class="form-label" for="image">Image</label>
+          <input  type="file" name="image" id="image" />
+        </div>
+        <div class="form-product-name">
+          <label class="form-label" for="product-name">Product Name</label>
+          <input  type="text" name="product_name" id="product_name" />
+        </div>
+        <div class="form-product-price">
+          <label class="form-label" for="product-price">Product Price</label>
+          <input
+            
+            type="number"
+            name="product_price"
+            id="product_price"
+          />
+        </div>
+
+        <div class="form-product-description">
+          <label class="form-label" for="product-description"
+            >Product Description</label
+          >
+          <textarea
+            
+            name="product_description"
+            id="product_description"
+            cols="30"
+            rows="5"
+          ></textarea>
+
+          <input type="submit" value="Save Product" />
+        </div>
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="logo-info">
+          <img src="images/logo.png" alt="" />
+          <p class="footer-description">
+            Shop Savvy is a price comparison platform that helps you find the
+            best deals on products from top brands.
+          </p>
+          <div class="copyright-info">
+            <p>Copyright &copy; 2025 LLC.</p>
+            <p>All rights reserved</p>
+            <p>Jeffb.</p>
+          </div>
+        </div>
+
+        <div class="footer-links-wrapper">
+          <ul class="footer-links">
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+
+          <ul class="footer-links">
+            <li><a href="#">News</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+
+          <ul class="footer-links">
+            <li><a href="#">Bulk Purchase</a></li>
+            <li><a href="#">Affiliate</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script defer>
+      function validator(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const form = event.target;
+        const formData = new FormData(form);
+        let isValid = true;
+        let alertMessage = "Please fill out the following fields:\n";
+
+        for (const [key, value] of formData.entries()) {
+          if (!value) {
+            isValid = false;
+            alertMessage += `- ${key}\n`;
+            document.getElementById(key).style.borderColor = "red"; // Flag empty fields
+          } else {
+            document.getElementById(key).style.borderColor = "#16194F"; // Reset border color for filled fields
+          }
+        }
+
+        if (!isValid) {
+          alert(alertMessage);
+        } else {
+          form.submit(); // Submit the form if all fields are valid
+        }
+      }
+    </script>
+  </body>
+</html>
