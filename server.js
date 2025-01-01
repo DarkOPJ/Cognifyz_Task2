@@ -1,10 +1,8 @@
 const express = require('express')
-const ejs = require('ejs');
-const {friendsRouter} = require('./routes/friends.router')
-const {countriesRouter} = require('./routes/countries.router')
 const {productRouter} = require('./routes/products.router')
 const {products} = require('./models/products.models')
-const imageController = require('./controller/imageSender.controller')
+const {reviewsRouter} = require('./routes/reviews.router')
+const {getReviewsList} = require('./models/reviews.models')
 
 const PORT = 3000
 
@@ -12,6 +10,7 @@ const app = express()
 
 app.set('view engine', 'ejs')
 
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(express.json())
 
 app.use(express.static('public'))
@@ -25,23 +24,17 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
     res.render('index', {
-        title: 'Task 1',
-        products
+        title: 'ShopSavvy',
+        products,
+        reviews: getReviewsList()
     })
 })
-
-
-// Friends
-app.use('/friends', friendsRouter)
-
-// Countries
-app.use('/countries', countriesRouter)
 
 // Products
 app.use('/products', productRouter)
 
-// Send image
-app.get('/skimountain', imageController.getImage)
+// Reviews
+app.use('/reviews', reviewsRouter)
 
 app.listen(PORT, () => {
     console.log('Server running on port ', PORT)

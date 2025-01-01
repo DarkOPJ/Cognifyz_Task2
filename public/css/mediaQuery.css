@@ -38,6 +38,22 @@
     text-align: center;
   }
 
+  /* Handle review content */
+  .reviews {
+    padding-inline: 25px;
+  }
+  .review-heads{
+    text-align: center;
+  }
+  .reviews-form {
+    padding: 25px;
+  }
+
+  /* Handle add form */
+  .add-form {
+    padding-inline: 25px;
+  }
+
   /* handle footer content */
   .footer {
     padding-inline: 25px;

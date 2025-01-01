@@ -14,6 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
     <title><%= title %></title>
   </head>
@@ -148,162 +149,14 @@
             </div>
           </div>
         </div>
-
         <% }) %>
 
-        <!-- <div class="products-card">
-          <div class="products-image">
-            <img src="images/products/rice.png" alt="product" />
-            <div class="products-favorite">
-              <i class="fa-regular fa-heart checked"></i>
-            </div>
-          </div>
-
-          <div class="products-info">
-            <div>
-              <div class="products-name-price">
-                <h4>Golden Delight Basmati Rice</h4>
-                <h4>₵112.00</h4>
-              </div>
-
-              <p class="products-description">
-                Golden Delight Basmati Rice is a fresh, high-quality, and
-                well-cared for rice variety.
-              </p>
-            </div>
-
-            <div class="products-btn-rating">
-              <button class="products-btn">Deal</button>
-              <div class="products-rating">
-                <div>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-                <span>(1,225)</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="products-card">
-          <div class="products-image">
-            <img src="images/products/controller.png" alt="product" />
-            <div class="products-favorite">
-              <i class="fa-regular fa-heart checked"></i>
-            </div>
-          </div>
-
-          <div class="products-info">
-            <div>
-              <div class="products-name-price">
-                <h4>PS4 Controller</h4>
-                <h4>₵200.00</h4>
-              </div>
-
-              <p class="products-description">
-                The DualShock 4 wireless controller for PS4 defines the new
-                generation of play, combining revolutionary features with an
-                intuitive design and precise controls.
-              </p>
-            </div>
-
-            <div class="products-btn-rating">
-              <button class="products-btn">Deal</button>
-              <div class="products-rating">
-                <div>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-                <span>(1,225)</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="products-card">
-          <div class="products-image">
-            <img src="images/products/iphone.png" alt="product" />
-            <div class="products-favorite">
-              <i class="fa-regular fa-heart checked"></i>
-            </div>
-          </div>
-
-          <div class="products-info">
-            <div>
-              <div class="products-name-price">
-                <h4>iPhone 13 Pro Max</h4>
-                <h4>₵9,600.00</h4>
-              </div>
-
-              <p class="products-description">
-                128GB, Sierra Blue - Unlocked (Renewed Premium)
-              </p>
-            </div>
-
-            <div class="products-btn-rating">
-              <button class="products-btn">Deal</button>
-              <div class="products-rating">
-                <div>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-                <span>(1,225)</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="products-card">
-          <div class="products-image">
-            <img src="images/products/samsung.png" alt="product" />
-            <div class="products-favorite">
-              <i class="fa-regular fa-heart checked"></i>
-            </div>
-          </div>
-
-          <div class="products-info">
-            <div>
-              <div class="products-name-price">
-                <h4>Samsung Galaxy S22</h4>
-                <h4>₵9,200.00</h4>
-              </div>
-
-              <p class="products-description">
-                Samsung Galaxy S22 5G S901U 128GB U.S. Cellular or GSM UNLOCKED
-                FAIR 5-7/10
-              </p>
-            </div>
-
-            <div class="products-btn-rating">
-              <button class="products-btn">Deal</button>
-              <div class="products-rating">
-                <div>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-                <span>(1,225)</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 
     <div class="add-form">
       <div class="add-form-info">
-        <h1>Addition Form</h1>
+        <h1>Add a Product</h1>
         <p>
           Fill out this form to add your name and a new product to our database.
         </p>
@@ -325,13 +178,12 @@
           <input  type="file" name="image" id="image" />
         </div>
         <div class="form-product-name">
-          <label class="form-label" for="product-name">Product Name</label>
+          <label class="form-label" for="product_name">Product Name</label>
           <input  type="text" name="product_name" id="product_name" />
         </div>
         <div class="form-product-price">
-          <label class="form-label" for="product-price">Product Price</label>
+          <label class="form-label" for="product_price">Product Price</label>
           <input
-            
             type="number"
             name="product_price"
             id="product_price"
@@ -339,7 +191,7 @@
         </div>
 
         <div class="form-product-description">
-          <label class="form-label" for="product-description"
+          <label class="form-label" for="product_description"
             >Product Description</label
           >
           <textarea
@@ -353,6 +205,91 @@
           <input type="submit" value="Save Product" />
         </div>
       </form>
+    </div>
+
+    <div class="reviews">
+      <h2 class="review-heads">Reviews</h2>
+      <p  class="review-heads">This is what our customers say to us</p>
+
+      <div class="reviews-container">
+        <div class="reviews-cards">
+          <% reviews.forEach(review => { %>
+            <div class="comment">
+              <div>
+                <svg
+                  class="comment-quotes"
+                  width="41"
+                  height="31"
+                  viewBox="0 0 41 31"
+                  fill="currentcolor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.955 18.7866C31.4003 18.7866 31.8277 18.7187 32.2531 18.6567C32.1153 19.1201 31.9735 19.5914 31.7458 20.0147C31.5181 20.6298 31.1627 21.1631 30.8092 21.7003C30.5136 22.2814 29.9924 22.6748 29.609 23.1721C29.2075 23.6554 28.6603 23.9769 28.227 24.3783C27.8016 24.7977 27.2444 25.0074 26.8011 25.303C26.3378 25.5686 25.9344 25.8621 25.503 26.0019L24.4266 26.4453L23.48 26.8387L24.4486 30.709L25.6408 30.4214C26.0222 30.3256 26.4876 30.2137 27.0168 30.0799C27.558 29.9801 28.1351 29.7065 28.7782 29.4568C29.4132 29.1732 30.1482 28.9815 30.8311 28.5262C31.5181 28.0908 32.311 27.7274 33.0099 27.1442C33.6869 26.5431 34.5037 26.0219 35.1068 25.257C35.7659 24.5421 36.4169 23.7912 36.9222 22.9364C37.5073 22.1216 37.9047 21.227 38.3241 20.3423C38.7035 19.4576 39.0091 18.5529 39.2587 17.6742C39.732 15.9128 39.9437 14.2393 40.0256 12.8074C40.0935 11.3735 40.0536 10.1812 39.9697 9.31851C39.9397 8.91111 39.8838 8.5157 39.8439 8.2421L39.7939 7.9066L39.742 7.91858C39.3868 6.25936 38.5691 4.73461 37.3836 3.5207C36.198 2.30679 34.693 1.45332 33.0426 1.05904C31.3922 0.664751 29.664 0.745754 28.0577 1.29268C26.4515 1.8396 25.0329 2.83009 23.9661 4.14957C22.8992 5.46905 22.2277 7.0636 22.0293 8.74876C21.8308 10.4339 22.1135 12.1408 22.8447 13.6721C23.5758 15.2033 24.7255 16.4962 26.1607 17.4013C27.596 18.3064 29.2582 18.7867 30.955 18.7866ZM8.98735 18.7866C9.4327 18.7866 9.86007 18.7187 10.2854 18.6567C10.1476 19.1201 10.0059 19.5914 9.77819 20.0147C9.55052 20.6298 9.19505 21.1631 8.84157 21.7003C8.546 22.2814 8.02477 22.6748 7.64134 23.1721C7.23993 23.6554 6.69274 23.9769 6.25938 24.3783C5.834 24.7977 5.27682 25.0074 4.83348 25.303C4.37016 25.5686 3.96676 25.8621 3.53539 26.0019L2.45898 26.4453L1.51237 26.8387L2.48095 30.709L3.67319 30.4214C4.05463 30.3256 4.51994 30.2137 5.04916 30.0799C5.59036 29.9801 6.16751 29.7065 6.81056 29.4568C7.44363 29.1713 8.18054 28.9815 8.86353 28.5242C9.55052 28.0888 10.3434 27.7254 11.0423 27.1422C11.7193 26.5411 12.5361 26.0199 13.1392 25.257C13.7983 24.5421 14.4493 23.7912 14.9546 22.9364C15.5397 22.1216 15.9371 21.227 16.3565 20.3423C16.7359 19.4576 17.0415 18.5529 17.2911 17.6742C17.7644 15.9128 17.9761 14.2393 18.058 12.8074C18.1259 11.3735 18.0859 10.1812 18.0021 9.31851C17.9721 8.91111 17.9162 8.5157 17.8762 8.2421L17.8263 7.9066L17.7744 7.91858C17.4192 6.25936 16.6015 4.73461 15.4159 3.5207C14.2304 2.30679 12.7254 1.45332 11.075 1.05904C9.42463 0.664751 7.69637 0.745754 6.09012 1.29268C4.48387 1.8396 3.06528 2.83009 1.99844 4.14957C0.93161 5.46905 0.260124 7.0636 0.061676 8.74876C-0.136772 10.4339 0.145916 12.1408 0.877045 13.6721C1.60817 15.2033 2.75786 16.4962 4.19312 17.4013C5.62838 18.3064 7.29055 18.7867 8.98735 18.7866Z"
+                    fill=""
+                  />
+                </svg>
+                <p class="comment-text">
+                  “<%= review.description %>”
+                </p>
+              </div>
+  
+              <div class="comment-profile">
+                <div class="profile-id">
+                  <p><%= review.name %></p>
+  
+                  <div class="review-stars">
+                    <% for( let index = 0; index < review.rating; index++ ) { %>
+                      <i class="fa fa-star checked"></i>
+                    <% } %>
+                    <% for( let index = 0; index < 5 - review.rating; index++ ) { %>
+                      <i class="fa fa-star"></i>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          <% }) %>
+        </div>
+
+        <form action="/reviews" method="post" class="reviews-form">
+          <div class="reviews-form-container">
+            <div class="review-name-stars">
+              <div class="review-wrapper">
+                <label for="review_name" class="form-label">Name</label>
+                <input type="text" id="review_name" name="name" required />
+              </div>
+  
+              <p  class="form-label">Rate our services</p>
+              <div class="rating">
+                <i class="rating-star fa fa-star"></i>
+                <i class="rating-star fa fa-star"></i>
+                <i class="rating-star fa fa-star"></i>
+                <i class="rating-star fa fa-star"></i>
+                <i class="rating-star fa fa-star"></i>
+              </div>
+              <input type="number" name="rating" id="rating" min="1" max="5" hidden required value="0">
+            </div>
+  
+            <div class="review-wrapper">
+              <label for="review_description" class="form-label review-description-label"
+                >Tell us something . . .</label
+              >
+              <textarea
+                type="text"
+                id="review_description"
+                name="description"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <input class="review-submit" type="submit" value="Send Review">
+        </form>
+
+      </div>
     </div>
 
     <footer class="footer">
@@ -392,6 +329,7 @@
       </div>
     </footer>
 
+    <script src="js/reviewRating.js"></script>
     <script defer>
       function validator(event) {
         event.preventDefault(); // Prevent the default form submission

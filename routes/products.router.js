@@ -9,7 +9,8 @@ const productRouter = express.Router()
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(process.cwd(), 'public', 'images', 'products'))
+        // cb(null, path.join(process.cwd(), 'public', 'images', 'products'))
+        cb(null, path.join(__dirname, '..', 'public', 'images', 'products')); // Use __dirname for the current script directory
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname)
