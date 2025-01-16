@@ -3,12 +3,15 @@ const {productRouter} = require('./routes/products.router')
 const {products} = require('./models/products.models')
 const {reviewsRouter} = require('./routes/reviews.router')
 const {getReviewsList} = require('./models/reviews.models')
+const {searchRouter} = require('./routes/search.router')
 
 const PORT = 3000
 
 const app = express()
 
 app.set('view engine', 'ejs')
+app.set('views', './views');
+
 
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(express.json())
@@ -22,6 +25,7 @@ app.use((req, res, next) => {
     console.log(req.method + " " + req.baseUrl + " " + delta +"ms")
 })
 
+// Home
 app.get('/', (req, res) => {
     res.render('index', {
         title: 'ShopSavvy',
@@ -29,6 +33,10 @@ app.get('/', (req, res) => {
         reviews: getReviewsList()
     })
 })
+
+
+// Products
+app.use('/search', searchRouter)
 
 // Products
 app.use('/products', productRouter)

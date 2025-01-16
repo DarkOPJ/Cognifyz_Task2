@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <a href="index.html"><img src="images/logo.png" alt="Shop Savvy Logo" /></a>
+
+  <ul class="nav-links">
+    <li class="nav-link"><a href="#categories">Categories</a></li>
+    <li class="nav-link"><a href="#deals">Deals</a></li>
+    <li class="nav-link"><a href="#brands">Brands</a></li>
+  </ul>
+
+  <form class="search-form search-form-inactive" action="/search" method="POST">
+    <input
+      type="search"
+      name="searchTerm"
+      id="searchTerm"
+      placeholder="Search products"
+    />
+    <button class="search-icon" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+
+  <div class="user-shortcut">
+    <a href="#" class="shortcut"
+      ><i class="fa-regular fa-user"></i>
+      <span> <%= products ? products[0].name : "Account" %> </span></a
+    >
+    <a href="#" class="shortcut"
+      ><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Wishlist</span>
+    </a>
+  </div>
+</nav>
