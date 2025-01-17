@@ -6,7 +6,7 @@ function postProduct(req, res) {
     const { name, product_name, product_price, product_description } = req.body;
     // console.log(req.file, req.body);
 
-    if (!name || !req.file || !product_name || !product_price) {
+    if (!name || !req.file || !product_name || !product_price || !product_description) {
       return res.status(400).json({
         error: "Data invalid",
       });
@@ -23,7 +23,7 @@ function postProduct(req, res) {
     };
     products.push(newProduct);
     console.log(products)
-    
+
     res.redirect("/");
   } catch (err) {
     res.status(400).send({ error: err.message });

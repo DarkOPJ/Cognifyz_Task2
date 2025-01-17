@@ -11,8 +11,6 @@ function searchProduct(req, res) {
     const data = products.filter(
       (product) =>
         product.product_name.match(new RegExp(searchNoSpecialCharacters, "i"))
-      //   ||
-      // product.body.match(new RegExp(searchNoSpecialCharacters, "i"))
     );
 
     res.render("search", {
