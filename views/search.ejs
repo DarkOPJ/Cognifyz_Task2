@@ -86,48 +86,47 @@
       <h2>Search results for "<%= searchTerm %>"</h2>
 
       <div class="products-wrapper">
-        <% if (products) { %> <% products.forEach(product => { %>
-        <div class="products-card">
-          <div class="products-image">
-            <img src=" <%=
-            product.image.replace("C:\\Users\\jeffr\\Desktop\\Internship\\task2node\\public\\",
-            '') %> " alt="product" />
-            <div class="products-favorite">
-              <i class="fa-regular fa-heart checked"></i>
-            </div>
-          </div>
-
-          <div class="products-info">
-            <div>
-              <div class="products-name-price">
-                <h4><%= product.product_name %></h4>
-                <h4>₵<%= product.product_price %></h4>
-              </div>
-
-              <p class="products-description">
-                <%= product.product_description %>
-              </p>
-            </div>
-
-            <div class="products-btn-rating">
-              <button class="products-btn">Deal</button>
-              <div class="products-rating">
-                <div>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star checked"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
+        <% if (products && products.length > 0) { %>
+          <% products.forEach(product => { %>
+            <div class="products-card">
+              <div class="products-image">
+                <img src="<%= product.image.replace('C:\\Users\\jeffr\\Desktop\\Internship\\task2node\\public\\', '') %>" alt="product" />
+                <div class="products-favorite">
+                  <i class="fa-regular fa-heart checked"></i>
                 </div>
-                <span>(1,225)</span>
+              </div>
+        
+              <div class="products-info">
+                <div>
+                  <div class="products-name-price">
+                    <h4><%= product.product_name %></h4>
+                    <h4>₵<%= product.product_price %></h4>
+                  </div>
+        
+                  <p class="products-description">
+                    <%= product.product_description %>
+                  </p>
+                </div>
+        
+                <div class="products-btn-rating">
+                  <button class="products-btn">Deal</button>
+                  <div class="products-rating">
+                    <div>
+                      <i class="fa fa-star checked"></i>
+                      <i class="fa fa-star checked"></i>
+                      <i class="fa fa-star checked"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                    <span>(1,225)</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <% }) %> <% } else { %>
-        <h2>No products found</h2>
-      </div>
-      <% } %>
+          <% }) %>
+        <% } else { %>
+          <h2>No products found</h2>
+        <% } %>
     </div>
 
     <div class="reviews">
