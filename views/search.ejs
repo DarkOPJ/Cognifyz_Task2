@@ -86,7 +86,7 @@
       <h2>Search results for "<%= searchTerm %>"</h2>
 
       <div class="products-wrapper">
-        <% products.forEach(product => { %>
+        <% if (products) { %> <% products.forEach(product => { %>
         <div class="products-card">
           <div class="products-image">
             <img src=" <%=
@@ -124,8 +124,10 @@
             </div>
           </div>
         </div>
-        <% }) %>
+        <% }) %> <% } else { %>
+        <h2>No products found</h2>
       </div>
+      <% } %>
     </div>
 
     <div class="reviews">
